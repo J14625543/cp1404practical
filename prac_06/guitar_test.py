@@ -11,4 +11,8 @@ def run_tests():
     print(f"{guitar.name} is_vintage() - Expected {True}. Got {guitar.is_vintage()}")
     print(f"{other.name} is_vintage() - Expected {False}. Got {other.is_vintage()}")
 
+if __name__ == '__main__':
+    run_tests()
+
+
 
