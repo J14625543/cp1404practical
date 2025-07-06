@@ -25,6 +25,9 @@ def main():
     else:
         print("No guitars :( Quick, go and buy one!")
 
+main()
+
+
 
 
 
