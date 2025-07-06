@@ -3,4 +3,6 @@ class Car:
         self.fuel = fuel
         self._odometer = 0
 
+    def add_fuel(self, amount):
+            self.fuel += amount
 
