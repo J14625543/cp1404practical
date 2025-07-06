@@ -23,6 +23,10 @@ def run_tests():
         if language.is_dynamic():
             print(language.name)
 
+if __name__ == "__main__":
+    run_tests()
+
+
 
 
 
