@@ -63,6 +63,15 @@ def read_projects(filename):
         print(f"Error: File '{filename}' not found.")
     return project_data
 
+def write_projects(projects, filename):
+    """Write project data to a file"""
+    with open(filename, "w") as file:
+        print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=file)
+        for p in projects:
+            file.write(f"{p.name}\t{p.start_date.strftime('%d/%m/%Y')}\t{p.priority}\t"
+                       f"{p.cost_estimate:.2f}\t{p.completion_percentage}\n")
+
+
 
 
 
