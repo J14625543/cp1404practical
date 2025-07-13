@@ -21,4 +21,7 @@ guitar2 = Guitar("Gibson Les Paul", 1959, 2500)
 guitar3 = Guitar("Martin D-28", 1972, 1800)
 guitars = [guitar1, guitar2, guitar3]
 sorted_guitars = sorted(guitars, key=lambda x: x.year)
+for guitar in sorted_guitars:
+    print(guitar)
+
 
