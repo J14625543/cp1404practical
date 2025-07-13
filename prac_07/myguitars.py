@@ -15,3 +15,11 @@ def main():
         print(language)
 main()
 
+def using_csv():
+    in_file = open('guitar.csv', 'r', newline='')
+    in_file.readline()
+    reader = csv.reader(in_file)
+    for row in reader:
+        print(row)
+    in_file.close()
+
