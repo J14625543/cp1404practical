@@ -92,6 +92,43 @@ def show_filtered_projects(projects):
     except ValueError:
         print("Error: Invalid date. Use format dd/mm/yyyy.")
 
+def create_project(projects):
+    """Create and add a new project"""
+    print("\n--- Add New Project ---")
+    name = input("Project Name: ")
+
+    while True:
+        start = input("Start Date (dd/mm/yyyy): ")
+        try:
+            datetime.datetime.strptime(start, "%d/%m/%Y")
+            break
+        except ValueError:
+            print("Invalid date format.")
+
+    while True:
+        priority = input("Priority (integer): ")
+        if priority.isdigit():
+            break
+        print("Priority must be a number.")
+
+    while True:
+        cost = input("Estimated Cost: $")
+        try:
+            float(cost)
+            break
+        except ValueError:
+            print("Cost must be a valid number.")
+
+    while True:
+        percent = input("Completion % (0–100): ")
+        if percent.isdigit() and 0 <= int(percent) <= 100:
+            break
+        print("Completion must be between 0 and 100.")
+
+    new_project = Project(name, start, priority, cost, percent)
+    projects.append(new_project)
+    print(f"Project '{name}' added.")
+
 
 
 
