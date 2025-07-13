@@ -71,6 +71,16 @@ def write_projects(projects, filename):
             file.write(f"{p.name}\t{p.start_date.strftime('%d/%m/%Y')}\t{p.priority}\t"
                        f"{p.cost_estimate:.2f}\t{p.completion_percentage}\n")
 
+def show_project_list(projects):
+    """Display projects grouped by completion status"""
+    print("\n--- Incomplete Projects ---")
+    for p in sorted([x for x in projects if not x.completed()]):
+        print(f"  {p}")
+
+    print("--- Completed Projects ---")
+    for p in sorted([x for x in projects if x.completed()]):
+        print(f"  {p}")
+
 
 
 
