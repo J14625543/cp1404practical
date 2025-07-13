@@ -14,3 +14,8 @@ class Project:
                 f"priority={self.priority}, cost=${self.cost_estimate:,.2f}, "
                 f"completion={self.completion_percentage}%)")
 
+    def __lt__(self, other):
+        # Compare projects by priority (lower number means higher priority)
+        return self.priority < other.priority
+
+
