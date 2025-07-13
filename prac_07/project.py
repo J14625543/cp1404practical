@@ -18,4 +18,11 @@ class Project:
         # Compare projects by priority (lower number means higher priority)
         return self.priority < other.priority
 
+    def completed(self):
+        # Check if the project is completed
+        return self.completion_percentage == 100
+
+
+
+
 
