@@ -81,6 +81,18 @@ def show_project_list(projects):
     for p in sorted([x for x in projects if x.completed()]):
         print(f"  {p}")
 
+def show_filtered_projects(projects):
+    """Display projects starting after a user-specified date"""
+    date_input = input("Enter cutoff date (dd/mm/yyyy): ")
+    try:
+        cutoff = datetime.datetime.strptime(date_input, "%d/%m/%Y").date()
+        matching = [p for p in projects if p.start_date > cutoff]
+        for proj in sorted(matching, key=attrgetter("start_date")):
+            print(proj)
+    except ValueError:
+        print("Error: Invalid date. Use format dd/mm/yyyy.")
+
+
 
 
 
