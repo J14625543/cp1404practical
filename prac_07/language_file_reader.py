@@ -36,5 +36,14 @@ def using_namedtuple():
         print(repr(language))
     in_file.close()
 
+def using_csv_namedtuple():
+    Language = namedtuple('Language', 'name, typing, reflection, year')
+    in_file = open("languages.csv", "r")
+    in_file.readline()
+    for language in map(Language._make, csv.reader(in_file)):
+        print(language.name, 'was released in', language.year)
+        print(repr(language))
+
+
 
 
