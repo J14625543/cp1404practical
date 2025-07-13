@@ -36,5 +36,17 @@ def start_program():
         else:
             print("Invalid input. Please choose a valid option.")
 
+def show_options():
+    """Print available actions"""
+    print("\nMenu:")
+    print("L - Load project file")
+    print("S - Save current projects")
+    print("D - Display all projects")
+    print("F - Filter projects by start date")
+    print("A - Add a new project")
+    print("U - Update existing project")
+    print("Q - Quit")
+
+
 
 
