@@ -47,6 +47,23 @@ def show_options():
     print("U - Update existing project")
     print("Q - Quit")
 
+def read_projects(filename):
+    """Read projects from the specified file"""
+    project_data = []
+    try:
+        with open(filename, "r") as file:
+            file.readline()  # Skip header
+            for line in file:
+                items = line.strip().split("\t")
+                if len(items) == 5:
+                    project_data.append(Project(*items))
+                else:
+                    print(f"Warning: Line skipped due to format issue: {line.strip()}")
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
+    return project_data
+
+
 
 
 
