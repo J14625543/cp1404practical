@@ -156,6 +156,9 @@ def modify_project(projects):
     except (ValueError, IndexError):
         print("Invalid selection.")
 
+if __name__ == "__main__":
+    start_program()
+
 
 
 
