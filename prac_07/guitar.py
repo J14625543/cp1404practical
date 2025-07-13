@@ -15,3 +15,8 @@ class Guitar:
 
     def is_vintage(self):
         return self.get_age() >= VINTAGE_AGE
+
+guitar1 = Guitar("Fender Stratocaster", 1965, 1500)
+guitar2 = Guitar("Gibson Les Paul", 1959, 2500)
+guitar3 = Guitar("Martin D-28", 1972, 1800)
+
