@@ -129,6 +129,34 @@ def create_project(projects):
     projects.append(new_project)
     print(f"Project '{name}' added.")
 
+def modify_project(projects):
+    """Update selected project's priority or completion"""
+    print("\n--- Project Update ---")
+    for idx, p in enumerate(projects):
+        print(f"{idx}: {p}")
+
+    try:
+        selected = int(input("Choose project index to update: "))
+        project = projects[selected]
+        print(f"Selected: {project}")
+
+        new_percent = input("New completion percentage (leave blank to skip): ")
+        if new_percent:
+            if new_percent.isdigit() and 0 <= int(new_percent) <= 100:
+                project.completion_percentage = int(new_percent)
+            else:
+                print("Invalid percentage entered.")
+
+        new_priority = input("New priority (leave blank to skip): ")
+        if new_priority:
+            if new_priority.isdigit():
+                project.priority = int(new_priority)
+            else:
+                print("Invalid priority entered.")
+    except (ValueError, IndexError):
+        print("Invalid selection.")
+
+
 
 
 
