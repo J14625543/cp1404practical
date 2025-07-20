@@ -34,4 +34,5 @@ class DistanceConverterApp(App):
             return 0
 
 
-
+if __name__ == '__main__':
+    DistanceConverterApp().run()
