@@ -1,0 +1,34 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        TextInput:
+            id: miles_input
+            text: '34'
+            font_size: 48
+            on_text: app.update_result()
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.3
+
+            Button:
+                text: 'Increase'
+                on_press: app.adjust_value(1)
+
+            Button:
+                text: 'Decrease'
+                on_press: app.adjust_value(-1)
+
+Label:
+    id: result_display
+    text: '54.717'
+    font_size: 48
+    color: 1, 1, 0, 1
+
+
+
+
+

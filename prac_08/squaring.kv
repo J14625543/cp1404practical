@@ -1,0 +1,28 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 15
+
+        TextInput:
+            id: number_input
+            text: '7'
+            font_size: 46
+            multiline: False
+            size_hint_x: 0.7
+
+        Button:
+            text: 'Calculate Square'
+            on_release: app.calculate_square(number_input.text)
+            size_hint_x: 0.3
+
+    Label:
+        text: "Input a number and click 'Calculate Square'"
+        size_hint_y: None
+        height: '50dp'
+
+    Label:
+        id: result_label
+        font_size: 46
+        color: (0.8, 0.2, 0.8, 1)
