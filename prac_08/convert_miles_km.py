@@ -19,4 +19,19 @@ class DistanceConverterApp(App):
         kilometers = miles * MILES_TO_KILOMETERS
         self.root.ids.result_display.text = str(kilometers)
 
+    def update_miles(self, delta):
+        """Increase or decrease the miles input and update the result."""
+        miles = self.read_miles_input() + delta
+        self.root.ids.miles_input.text = str(miles)
+        self.convert_distance()
+
+    def read_miles_input(self):
+        """Read user input safely; return 0 if invalid input."""
+        try:
+            miles = float(self.root.ids.miles_input.text)
+            return miles
+        except ValueError:
+            return 0
+
+
 
