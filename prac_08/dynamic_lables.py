@@ -18,4 +18,5 @@ class NameListApp(App):
             container.add_widget(new_label)
 
 
-
+if __name__ == "__main__":
+    NameListApp().run()
