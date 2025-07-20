@@ -8,3 +8,6 @@ class NameListApp(App):
         super().__init__(**kwargs)
         self.user_names = ["Alice", "Bob", "Charlie", "Diana"]
 
+    def build(self):
+        return Builder.load_file('dynamic_labels.kv')
+
