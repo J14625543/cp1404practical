@@ -19,4 +19,11 @@ class LayoutExampleApp(App):
             message = f"Hello, {user_name}!"
             print(message)
 
+    def reset_input(self):
+        """Empty the name input box."""
+        input_field = self.root.ids.name_input
+        input_field.text = ""
 
+
+if __name__ == "__main__":
+    LayoutExampleApp().run()
