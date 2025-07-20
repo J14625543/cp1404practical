@@ -13,3 +13,10 @@ class DistanceConverterApp(App):
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
+    def convert_distance(self):
+        """Perform conversion and update the output label."""
+        miles = self.read_miles_input()
+        kilometers = miles * MILES_TO_KILOMETERS
+        self.root.ids.result_display.text = str(kilometers)
+
+
