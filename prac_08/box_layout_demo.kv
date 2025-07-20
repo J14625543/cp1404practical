@@ -9,4 +9,10 @@ BoxLayout:
         orientation: 'horizontal'
         spacing: 10
 
+        Button:
+            text: 'Confirm'
+            on_press: app.process_name()
 
+        Button:
+            text: 'Reset'
+            on_press: app.reset_name()
