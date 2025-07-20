@@ -22,4 +22,5 @@ class NumberSquaringApp(App):
             self.root.ids.result_label.text = ""
 
 
-
+if __name__ == '__main__':
+    NumberSquaringApp().run()
