@@ -56,4 +56,43 @@ def taxi_simulator():
     list_taxis(fleet)
 
 
+def list_taxis(taxis):
+    """Print list of taxis with their indices."""
+    for index, taxi in enumerate(taxis):
+        print(f"{index} - {taxi}")
+
+
+def test_vehicles():
+    """Test Car, Taxi, and SilverServiceTaxi classes."""
+    car = Car("Datsun", 180)
+    car.drive(30)
+    print(f"Fuel left: {car.fuel}")
+    print(f"Odometer reading: {car._odometer}")
+    car.drive(55)
+    print(f"Fuel left: {car.fuel}")
+    print(f"Odometer reading: {car._odometer}")
+    print(car)
+
+    dist = int(input("How far to drive? "))
+    while dist > 0:
+        travelled = car.drive(dist)
+        print(f"{car} travelled {travelled} km")
+        dist = int(input("How far to drive? "))
+
+    taxi = Taxi("Prius 1", 100)
+    print(taxi)
+    taxi.drive(25)
+    print(taxi, taxi.get_fare())
+    taxi.start_fare()
+    taxi.drive(40)
+    print(taxi, taxi.get_fare())
+
+    luxury_taxi = SilverServiceTaxi("Limo", 100, 2)
+    print(luxury_taxi, luxury_taxi.get_fare())
+    luxury_taxi.drive(10)
+    print(luxury_taxi, luxury_taxi.get_fare())
+
+
+if __name__ == "__main__":
+    taxi_simulator()
 
