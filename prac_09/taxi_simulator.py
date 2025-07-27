@@ -21,3 +21,15 @@ def taxi_simulator():
     print("Welcome to the Taxi Simulator!")
     print(MENU_OPTIONS)
 
+    choice = input("Select an option: ").lower()
+    while choice != 'q':
+        if choice == 'c':
+            print("Available taxis:")
+            list_taxis(fleet)
+            try:
+                taxi_index = int(input("Select taxi by number: "))
+                selected_taxi = fleet[taxi_index]
+            except (ValueError, IndexError):
+                print("That is not a valid taxi choice.")
+
+
