@@ -12,3 +12,6 @@ def run_taxi_demo():
     taxi_instance.start_fare()
     taxi_instance.drive(100)
     print(taxi_instance)
+
+if __name__ == "__main__":
+    run_taxi_demo()
