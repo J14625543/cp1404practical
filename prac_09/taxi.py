@@ -14,5 +14,9 @@ class Taxi(Car):
         self.rate_per_km = rate_per_km
         self.fare_distance = 0
 
+    def __str__(self):
+        """Return string representation including fare distance and rate."""
+        base_str = super().__str__()
+        return f"{base_str}, fare distance: {self.fare_distance} km, rate: ${self.rate_per_km:.2f}/km"
 
 
