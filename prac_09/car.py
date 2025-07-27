@@ -27,4 +27,15 @@ class Vehicle:
         """Refill the vehicle with a given amount of fuel."""
         self.fuel_level += fuel_amount
 
+    def move(self, km):
+        """
+        Attempt to move the vehicle the given number of km.
 
+        Reduces fuel accordingly. If not enough fuel, drive as far as possible.
+        Returns:
+            float: the actual distance moved
+        """
+        actual_km = min(km, self.fuel_level)
+        self.fuel_level -= actual_km
+        self.distance_travelled += actual_km
+        return actual_km
