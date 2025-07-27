@@ -19,4 +19,12 @@ class Vehicle:
         self.fuel_level = initial_fuel
         self.distance_travelled = 0
 
+    def __str__(self):
+        """Return string showing vehicle status."""
+        return f"{self.model_name}, fuel={self.fuel_level}, odometer={self.distance_travelled}"
+
+    def refuel(self, fuel_amount):
+        """Refill the vehicle with a given amount of fuel."""
+        self.fuel_level += fuel_amount
+
 
