@@ -17,3 +17,10 @@ def test_unreliable_cars():
         print(f"{reliable_car.name:<15} drove {result1:>2} km")
         print(f"{unreliable_car.name:<15} drove {result2:>2} km")
 
+    # Print final states of both cars
+    print("\nFinal status:")
+    print(reliable_car)
+    print(unreliable_car)
+
+if __name__ == "__main__":
+    test_unreliable_cars()
