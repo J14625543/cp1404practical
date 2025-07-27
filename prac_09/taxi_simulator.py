@@ -31,5 +31,29 @@ def taxi_simulator():
                 selected_taxi = fleet[taxi_index]
             except (ValueError, IndexError):
                 print("That is not a valid taxi choice.")
+        elif choice == 'd':
+            if selected_taxi:
+                selected_taxi.start_fare()
+                try:
+                    distance = float(input("Enter distance to drive: "))
+                    selected_taxi.drive(distance)
+                    fare = selected_taxi.get_fare()
+                    print(f"Trip cost for {selected_taxi.name}: ${fare:.2f}")
+                    total_cost += fare
+                except ValueError:
+                    print("Please enter a valid number for distance.")
+            else:
+                print("Please choose a taxi first before driving.")
+        else:
+            print("Invalid option selected.")
+
+        print(f"Total bill so far: ${total_cost:.2f}")
+        print(MENU_OPTIONS)
+        choice = input("Select an option: ").lower()
+
+    print(f"Final total cost: ${total_cost:.2f}")
+    print("Current taxis in the fleet:")
+    list_taxis(fleet)
+
 
 
