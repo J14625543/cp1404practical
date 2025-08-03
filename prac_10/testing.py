@@ -39,4 +39,24 @@ def make_sentence(phrase):
     return phrase if phrase.endswith('.') else phrase + '.'
 
 
+def run_all_tests():
+    """Perform assertion tests for all functions."""
+    # Testing repeat_text
+    assert repeat_text("Python", 1) == "Python"
+    assert repeat_text("hi", 2) == "hi hi"
 
+    # Testing Car default attributes
+    default_car = Car()
+    assert default_car._odometer == 0, "Odometer not initialized correctly"
+
+    # Test fuel initialization (custom and default)
+    custom_fuel_car = Car(fuel=10)
+    assert custom_fuel_car.fuel == 10
+
+    default_fuel_car = Car()
+    assert default_fuel_car.fuel == 0
+
+
+if __name__ == "__main__":
+    run_all_tests()
+    doctest.testmod()
